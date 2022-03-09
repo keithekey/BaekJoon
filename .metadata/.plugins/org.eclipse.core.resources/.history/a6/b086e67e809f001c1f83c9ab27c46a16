@@ -1,0 +1,48 @@
+package solve.com;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+public class Main {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int num = Integer.parseInt(br.readLine());
+		boolean isHansu[] = new boolean[num + 1];
+		
+		for(int i = 1; i < isHansu.length; i++) {
+			if(i < 100) {
+				isHansu[i] = true; //100 이하의 수는 전부 한수
+			} else {
+				isHansu[i] = false; //100 이상의 수는 전부 한수가 아닌 것으로 일단 처리
+			}
+		}
+		
+		for(int j = 100; j < isHansu.length; j++) {
+			
+		}
+		
+	}
+	
+	public static boolean chkHansu(int i) {
+		int[] nums = new int[3];
+		
+		for(int j = 0; j < nums.length; j++) {
+			nums[i] = i % 10;
+			i /= 10;
+		}
+		
+		if(nums[2] - nums[1] == nums[1] - nums[0]) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+
+}

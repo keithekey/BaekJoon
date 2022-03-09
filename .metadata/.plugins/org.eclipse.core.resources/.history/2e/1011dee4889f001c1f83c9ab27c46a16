@@ -10,8 +10,8 @@ public class Main {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();
-		char[] ch = new char[26];
-		int[] idx = new int[26];
+		char[] ch = new char[27];
+		int[] idx = new int[27];
 		
 		for(int a = 0; a < ch.length; a++) {
 			ch[a] = (char) (97 + a);
@@ -24,17 +24,13 @@ public class Main {
 					if(idx[j - 97] != -1) {
 						break;
 					} else {
-						idx[j - 97] = i;
+						idx[j - 97] = j - 97;
 					}
 				}
 			}
 		}
 		
 		for(int k = 0; k < idx.length; k++) {
-			if(k == idx.length - 1) {
-				System.out.print(idx[k]);
-				break;
-			}
 			System.out.print(idx[k] + " ");
 		}
 		

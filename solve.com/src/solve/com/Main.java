@@ -6,37 +6,44 @@ import java.io.InputStreamReader;
 
 public class Main {
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String str = br.readLine();
-		char[] ch = new char[26];
-		int[] idx = new int[26];
-		
-		for(int a = 0; a < ch.length; a++) {
-			ch[a] = (char) (97 + a);
-			idx[a] = -1;
-		}
+		int res = 0;
 		
 		for(int i = 0; i < str.length(); i++) {
-			for(int j = 97; j < 123; j++) {
-				if(str.charAt(i) == (char)(j)) {
-					if(idx[j - 97] != -1) {
-						break;
-					} else {
-						idx[j - 97] = i;
-					}
-				}
+			switch(str.charAt(i)) {
+				case 'A' : res += 3; break;
+				case 'B' : res += 3; break;
+				case 'C' : res += 3; break;
+				case 'D' : res += 4; break;
+				case 'E' : res += 4; break;
+				case 'F' : res += 4; break;
+				case 'G' : res += 5; break;
+				case 'H' : res += 5; break;
+				case 'I' : res += 5; break;
+				case 'J' : res += 6; break;
+				case 'K' : res += 6; break;
+				case 'L' : res += 6; break;
+				case 'M' : res += 7; break;
+				case 'N' : res += 7; break;
+				case 'O' : res += 7; break;
+				case 'P' : res += 8; break;
+				case 'Q' : res += 8; break;
+				case 'R' : res += 8; break;
+				case 'S' : res += 8; break;
+				case 'T' : res += 9; break;
+				case 'U' : res += 9; break;
+				case 'V' : res += 9; break;
+				case 'W' : res += 10; break;
+				case 'X' : res += 10; break;
+				case 'Y' : res += 10; break;
+				case 'Z' : res += 10; break;
 			}
 		}
 		
-		for(int k = 0; k < idx.length; k++) {
-			if(k == idx.length - 1) {
-				System.out.print(idx[k]);
-				break;
-			}
-			System.out.print(idx[k] + " ");
-		}
+		System.out.print(res);
 		
 	}
 

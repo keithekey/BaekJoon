@@ -1,0 +1,38 @@
+package solve.com;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		String a = st.nextToken();
+		String b = st.nextToken();
+		int maxLen = Math.max(a.length(), b.length());
+		int[] aArr = new int[maxLen + 1];
+		int[] bArr = new int[maxLen + 1];
+		
+		for(int i = 0; i < aArr.length; i++) {
+			if(i > a.length()) {
+				aArr[i] = 0;
+				continue;
+			}
+			aArr[i] = Character.getNumericValue(a.charAt(i));
+		}
+		
+		for(int j = 0; j < bArr.length; j++) {
+			if(j > b.length()) {
+				bArr[j] = 0;
+				continue;
+			}
+			bArr[j] = Character.getNumericValue(b.charAt(j));
+		}
+		
+		System.out.print(aArr[0] + bArr[0]);
+	}
+}

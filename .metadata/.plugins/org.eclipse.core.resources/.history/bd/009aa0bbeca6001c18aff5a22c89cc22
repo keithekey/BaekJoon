@@ -1,0 +1,50 @@
+package solve.com;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.PriorityQueue;
+
+public class Main {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		
+		int x = 0;
+		int cnt = 1 ;
+		PriorityQueue<Integer> pq1 = new PriorityQueue<Integer>();
+		PriorityQueue<Integer> pq2 = new PriorityQueue<Integer>(Collections.reverseOrder());
+		
+		while(true) {
+			x = Integer.parseInt(br.readLine());
+			
+			if(cnt % 2 == 0) {	//짝수번 순서라면
+				pq1.offer(x);
+			} else {
+				pq2.offer(x);
+			}
+			
+			Iterator it1 = pq1.iterator();
+			Iterator it2 = pq2.iterator();
+			
+			
+			System.out.print("pq1: ");
+			while(it1.hasNext()) {
+				System.out.print(it1.next() + " ");
+			}
+			
+			System.out.println();
+			
+			System.out.print("pq2: ");
+			while(it2.hasNext()) {
+				System.out.print(it2.next() + " ");
+			}
+			System.out.println();
+			cnt++;
+		}
+	}
+	
+}

@@ -1,4 +1,4 @@
-package solve.com.prev.uncat;
+package solve.com.prev.math;
 
 import java.io.BufferedReader;
 import java.io.IOException;
